@@ -34,6 +34,7 @@
             class="mobile-menu-btn"
             type="button"
             aria-label="Open menu button"
+            data-menu-open
           >
             <svg class="mobile-menu-icon" width="24" height="24">
               <use href="./images/icons.svg#burger"></use>
@@ -69,14 +70,16 @@
     </header>
     <main>
       <!-- Top section -->
-      <section class="main hide">
+      <section class="main">
         <div class="container main-container">
           <h1 class="main-header">Effective Solutions for Your Business</h1>
-          <button class="main-button btn" type="button">Order Service</button>
+          <button class="main-button btn" type="button" data-modal-open>
+            Order Service
+          </button>
         </div>
       </section>
       <!-- Our strength section -->
-      <section class="section hide">
+      <section class="section">
         <div class="container strength-container">
           <h2 class="strength">Our Strength</h2>
           <ul class="strength-list">
@@ -389,7 +392,7 @@
         </div>
       </section>
 
-      <section class="portfolio section hide">
+      <section class="portfolio section">
         <div class="container portfolio-container">
           <h2 class="section-header">Our Portfolio</h2>
           <ul class="portfolio-list">
@@ -398,7 +401,7 @@
                 <img
                   src="./images/portfolio-1.jpg"
                   alt="Banking App"
-                  width="360"
+                  width="288"
                 />
                 <p class="overlay-text">
                   14 Stylish and User-Friendly App Design Concepts · Task
@@ -416,7 +419,7 @@
                 <img
                   src="./images/portfolio-2.jpg"
                   alt="Wireless payment"
-                  width="360"
+                  width="288"
                 />
                 <p class="overlay-text">
                   14 Stylish and User-Friendly App Design Concepts · Task
@@ -431,7 +434,7 @@
             </li>
             <li class="portfolio-item">
               <div class="portfolio-wrapper">
-                <img src="./images/portfolio-3.jpg" alt="Laptop" width="360" />
+                <img src="./images/portfolio-3.jpg" alt="Laptop" width="288" />
                 <p class="overlay-text">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -448,7 +451,7 @@
                 <img
                   src="./images/portfolio-4.jpg"
                   alt="Car wheel"
-                  width="360"
+                  width="288"
                 />
                 <p class="overlay-text">
                   14 Stylish and User-Friendly App Design Concepts · Task
@@ -466,7 +469,7 @@
                 <img
                   src="./images/portfolio-5.jpg"
                   alt="App screenshots"
-                  width="360"
+                  width="288"
                 />
                 <p class="overlay-text">
                   14 Stylish and User-Friendly App Design Concepts · Task
@@ -484,7 +487,7 @@
                 <img
                   src="./images/portfolio-6.jpg"
                   alt="Lady in orange sweater"
-                  width="360"
+                  width="288"
                 />
                 <p class="overlay-text">
                   14 Stylish and User-Friendly App Design Concepts · Task
@@ -501,7 +504,7 @@
         </div>
       </section>
     </main>
-    <footer class="footer hide">
+    <footer class="footer">
       <div class="container footer-container">
         <div class="footer-wrapper logo">
           <a class="logo logo-footer" href="./index.html">
@@ -570,7 +573,7 @@
           </ul>
         </div>
 
-        <div class="footer-wrapper">
+        <div class="footer-wrapper subscribe">
           <p class="social-text">Subscribe</p>
 
           <form class="footer-form" name="subscribe">
@@ -595,9 +598,9 @@
     </footer>
 
     <!-- #region Modal -->
-    <div class="backdrop is-open hide">
+    <div class="backdrop" data-modal>
       <div class="modal">
-        <button class="modal-close-btn" type="button">
+        <button class="modal-close-btn" type="button" data-modal-close>
           <svg class="modal-close-icon" width="8" height="8">
             <use href="./images/icons.svg#close"></use>
           </svg>
@@ -697,33 +700,101 @@
     <!-- #endregion Modal -->
 
     <!-- #region Mobie menu -->
-    <!-- .mobile-menu>.container>.button.mobile-menu-btn+(ul.mobile-menu-nav>li*3>a)+(ul.mobile-menu-contacts>li*2>a) -->
-    <div class="mobile-menu">
-      <div class="container">
-        <div class="button mobile-menu-btn"></div>
+    <!-- .mobile-menu>.container>.button.mobile-menu-close+(ul.mobile-menu-nav>li*3>a)+(ul.mobile-menu-contacts>li*2>a) -->
+    <div class="mobile-menu" data-menu>
+      <button
+        class="modal-close-btn mobile-menu-close"
+        type="button"
+        data-menu-close
+      >
+        <svg class="modal-close-icon mobile-menu-icon" width="8" height="8">
+          <use href="./images/icons.svg#close"></use>
+        </svg>
+      </button>
+      <div class="mobile-nav">
         <ul class="mobile-menu-nav">
           <li class="mobile-menu-item">
-            <a class="mobile-menu-link" href="#"></a>Studio
+            <a class="mobile-menu-link is-active" href="./index.html">Studio</a>
           </li>
           <li class="mobile-menu-item">
-            <a class="mobile-menu-link" href="#"></a>Portfolio
+            <a class="mobile-menu-link" href="#">Portfolio</a>
           </li>
           <li class="mobile-menu-item">
-            <a class="mobile-menu-link" href="#"></a>Contacts
+            <a class="mobile-menu-link" href="#">Contacts</a>
           </li>
-        </ul class="mobile-menu-contacts-nav">
+        </ul>
         <ul class="mobile-menu-contacts">
           <li class="mobile-menu-item">
-            <a class="mobile-menu-link" href="tel:110001111111"></a>+11 (000)
-            111-11-11
+            <a class="mobile-contact-item" href="tel:110001111111"
+              >+11 (000)111-11-11</a
+            >
           </li>
           <li class="mobile-menu-item">
-            <a class="mobile-menu-link" href="mailto:info@devstudio.com"></a
-            >info@devstudio.com
+            <a
+              class="mobile-contact-item mobile-menu-email"
+              href="mailto:info@devstudio.com"
+              >info@devstudio.com</a
+            >
+          </li>
+        </ul>
+        <ul class="team-social-list mobile-social">
+          <li class="social-item">
+            <a
+              class="team-social-wrapper social-footer"
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Link to Instagram"
+            >
+              <svg class="team-social-icon" width="24" height="24">
+                <use href="./images/icons.svg#instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item">
+            <a
+              class="team-social-wrapper social-footer"
+              href="https://x.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Link to X"
+            >
+              <svg class="team-social-icon" width="24" height="24">
+                <use href="./images/icons.svg#twitter"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item">
+            <a
+              class="team-social-wrapper social-footer"
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Link to Facebook"
+            >
+              <svg class="team-social-icon" width="24" height="24">
+                <use href="./images/icons.svg#facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item">
+            <a
+              class="team-social-wrapper social-footer"
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Link to Linkedin"
+            >
+              <svg class="team-social-icon" width="24" height="24">
+                <use href="./images/icons.svg#linkedin"></use>
+              </svg>
+            </a>
           </li>
         </ul>
       </div>
     </div>
     <!-- #endregion -->
+    <script src="./js/menu.js"></script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
