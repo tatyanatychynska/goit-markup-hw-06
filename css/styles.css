@@ -1,7 +1,3 @@
-.hide {
-  display: none;
-}
-
 /* #region Base */
 body {
   font-family: "Roboto", sans-serif;
@@ -18,7 +14,6 @@ body:has(.backdrop.is-open) {
   max-width: 320px;
   padding: 0 16px;
   margin: 0 auto;
-  outline: red 1px solid;
 }
 
 /*? Tablet screen */
