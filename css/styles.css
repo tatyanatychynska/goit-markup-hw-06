@@ -175,7 +175,6 @@ img {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #4d5ae5;
-  margin-bottom: 72px;
 }
 
 .header-logo {
@@ -695,7 +694,6 @@ img {
 @media only screen and (min-width: 768px) {
   .logo-footer {
     display: inline-block;
-    margin-bottom: 16px;
   }
 }
 .footer-text {
