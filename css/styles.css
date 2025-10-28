@@ -175,7 +175,7 @@ img {
 }
 
 .header-logo {
-  padding: 16px 0px 16px 16px;
+  padding: 16px 0px;
   margin-right: auto;
 }
 @media only screen and (min-width: 768px) {
@@ -227,7 +227,7 @@ img {
     url(../images/top-bg/Dark-bgmob.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -481,10 +481,15 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 72px;
   flex-wrap: wrap;
 }
 
+@media only screen and (min-width: 768px) {
+  .team-list {
+    gap: 64px 24px;
+  }
+}
 .card-name {
   font-weight: 500;
   font-size: 20px;
