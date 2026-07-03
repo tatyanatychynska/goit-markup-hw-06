@@ -7,7 +7,7 @@ Responsive single-page landing for a web development studio.
 ## 🔗 Demo
 [Live on GitHub Pages](https://tatyanatychynska.github.io/goit-markup-hw-06/)
 
-<img width="1411" height="795" alt="image" src="https://github.com/user-attachments/assets/5ba9ee5f-fe50-4448-b031-ecd33c515ee1" />
+<img width="1442" height="1057" alt="image" src="https://github.com/user-attachments/assets/208e0caf-269b-4e6a-a425-a0d2d0788709" />
 
 
 ## 🛠 Stack
